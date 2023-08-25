@@ -1,6 +1,8 @@
 # Add the necessary imports at the top of your settings.py file
 import os
 from pathlib import Path
+import dj_database_url
+
 
 # Base directory of your Django project
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -9,9 +11,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-w213ab4k)1f71iiyb+h01ud*4twh+vi0v$9kx(xav@cs0793f-'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 # Application definition
 
@@ -60,12 +62,14 @@ WSGI_APPLICATION = 'products_billing_app.wsgi.application'
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
 # Database
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),  # Corrected database path
-    }
-}
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),  # Corrected database path
+#     }
+# }
+LOCAL_DATABASE_URL = 'sqlite:///db.sqlite3'
+DATABASES = {'default': dj_database_url.config(default=os.environ.get('DATABASE_URL', LOCAL_DATABASE_URL))}
 
 # Password validation
 # https://docs.djangoproject.com/en/3.2/ref/settings/#auth-password-validators

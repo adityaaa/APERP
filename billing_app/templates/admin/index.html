@@ -1,0 +1,13 @@
+{% extends "admin/index.html" %}
+
+{% block user %}
+    <div id="user-tools">
+        <h2>{% trans 'User Tools' %}</h2>
+        <ul>
+            <li><a href="{% url 'admin:app_list' 'billing_app' %}">{% trans 'Billing App' %}</a></li>
+            <!-- Add the "Create Sale" link below -->
+            <li><a href="{% url 'admin:create_sale' %}">{% trans 'Create Sale' %}</a></li>
+            <!-- End of "Create Sale" link -->
+        </ul>
+    </div>
+{% endblock %}

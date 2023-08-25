@@ -1,0 +1,31 @@
+<!-- billing_app/templates/sales_list.html and billing_app/templates/purchase_list.html -->
+
+{% extends 'base.html' %}
+
+{% block title %}Sales List{% endblock %}
+
+{% block content %}
+  <h2>Sales List</h2>
+  <table>
+    <!-- Table header -->
+    <thead>
+      <tr>
+        <th>Product</th>
+        <th>Quantity</th>
+        <th>Amount</th>
+        <th>Date</th>
+      </tr>
+    </thead>
+    <!-- Table body -->
+    <tbody>
+      {% for transaction in sales_transactions %}
+      <tr>
+        <td>{{ transaction.product.name }}</td>
+        <td>{{ transaction.quantity }}</td>
+        <td>{{ transaction.amount }}</td>
+        <td>{{ transaction.date }}</td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+{% endblock %}

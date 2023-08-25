@@ -1,0 +1,11 @@
+<!-- billing_app/templates/admin/dashboard.html -->
+
+{% extends "admin/base.html" %}
+
+{% block content %}
+    {{ block.super }}
+    <div class="module">
+        <h2>Create Sale</h2>
+        <p><a href="{% url 'create_sale' %}">Create a new sale</a></p>
+    </div>
+{% endblock %}

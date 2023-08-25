@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Bill Details</title>
+</head>
+<body>
+    <h1>Bill Details</h1>
+    <h2>Customer Information:</h2>
+    <p>Name: {{ customer.name }}</p>
+    <p>Address: {{ customer.address }}</p>
+    <h2>Products Purchased:</h2>
+    <ul>
+        {% for item in customer.billitem_set.all %}
+            <li>
+                {{ item.product.name }} - Price: ${{ item.product.mrp }} - Quantity: {{ item.quantity }}
+            </li>
+        {% endfor %}
+    </ul>
+    <p>Total Amount: ${{ customer.billitem_set.all|mul:item.quantity|mul:item.product.mrp|sum }}</p>
+    <a href="{% url 'product_list' %}">Back to Product List</a>
+</body>
+</html>

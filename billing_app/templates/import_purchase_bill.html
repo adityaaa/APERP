@@ -1,0 +1,16 @@
+<!-- import_purchase_bill.html -->
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Import Purchase Bill</title>
+</head>
+<body>
+    <h1>Import Purchase Bill</h1>
+    <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Import</button>
+    </form>
+</body>
+</html>

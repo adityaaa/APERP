@@ -1,0 +1,47 @@
+<!-- billing_app/templates/base.html -->
+
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{% block title %}{% endblock %}</title>
+    <!-- Link to the Google Fonts CSS file hosted on the CDN -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <!-- Link to the styles.css file -->
+    <link rel="stylesheet" href="{% static 'styles.css' %}">
+    <!-- Link to the Bootstrap CSS file hosted on the CDN -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <!-- Logo and company name in a container -->
+        <div class="container-fluid py-3">
+            <div class="row align-items-center">
+                <div class="col-md-2 col-6">
+                    <img src="{% static 'media/logo.png' %}" alt="Company Logo" class="img-fluid">
+                </div>
+                <div class="col-md-10 col-6">
+                    <h1>Aditya Pharmacy</h1>
+                </div>
+            </div>
+        </div>
+        <!-- Add any other header elements you want -->
+    </header>
+
+    <!-- Main Content -->
+    <div class="container mt-5">
+        {% block content %}
+        {% endblock %}
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <!-- Add any footer elements you want -->
+        <p>&copy; 2023 Aditya Pharmacy. All rights reserved.</p>
+    </footer>
+
+    <!-- Include any JavaScript libraries or custom scripts here if needed -->
+</body>
+</html>

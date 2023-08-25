@@ -1,0 +1,33 @@
+<!-- billing_app/templates/inventory_list.html -->
+
+{% extends 'base.html' %}
+
+{% block title %}Inventory List{% endblock %}
+
+{% block content %}
+  <h2>Inventory List</h2>
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+        <th>Stock Quantity</th>
+        <th>Price</th>
+        <th>Manufacturer</th>
+        <th>Expiry Date</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for item in inventory_items %}
+      <tr>
+        <td>{{ item.name }}</td>
+        <td>{{ item.description }}</td>
+        <td>{{ item.quantity }}</td>
+        <td>{{ item.mrp }}</td>
+        <td>{{ item.manufacturer }}</td>
+        <td>{{ item.expiry_date }}</td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+{% endblock %}

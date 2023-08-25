@@ -1,0 +1,49 @@
+<!-- billing_app/templates/dashboard.html -->
+
+{% extends 'base.html' %}
+
+{% block title %}Dashboard{% endblock %}
+
+{% block content %}
+  <div class="container mt-5">
+    <div class="row">
+      <div class="col-lg-3 col-md-6 mb-4">
+        <div class="card bg-primary text-white h-100">
+          <div class="card-body">
+            <h5 class="card-title">Inventory Management</h5>
+            <p class="card-text">Manage product stocks and details.</p>
+            <a href="{% url 'inventory_list' %}" class="btn btn-light">Go to Inventory</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-3 col-md-6 mb-4">
+        <div class="card bg-success text-white h-100">
+          <div class="card-body">
+            <h5 class="card-title">Sales</h5>
+            <p class="card-text">View sales transactions and orders.</p>
+            <a href="{% url 'sales_list' %}" class="btn btn-light">Go to Sales</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-3 col-md-6 mb-4">
+        <div class="card bg-warning text-white h-100">
+          <div class="card-body">
+            <h5 class="card-title">Purchase</h5>
+            <p class="card-text">View purchase transactions and orders.</p>
+            <a href="{% url 'purchase_list' %}" class="btn btn-light">Go to Purchase</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-3 col-md-6 mb-4">
+        <div class="card bg-info text-white h-100">
+          <div class="card-body">
+            <h5 class="card-title">Finance</h5>
+            <p class="card-text">View invoices and payments.</p>
+            <a href="{% url 'invoice_list' %}" class="btn btn-light">Go to Finance</a>
+          </div>
+        </div>
+      </div>
+      <!-- Add more cards for other modules as needed -->
+    </div>
+  </div>
+{% endblock %}

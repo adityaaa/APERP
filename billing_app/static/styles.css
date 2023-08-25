@@ -1,0 +1,21 @@
+/* billing_app/static/styles.css */
+
+/* Header styling */
+header {
+    background-color: #007bff; /* Set the background color of the header */
+    padding: 10px; /* Add padding around the header content */
+  }
+  
+  /* Logo styling */
+  header img {
+    max-height: 80px; /* Set the maximum height of the logo */
+    margin-right: 10px; /* Add margin to the right of the logo */
+  }
+  
+  /* Company name styling */
+  header h1 {
+    color: white; /* Set the color of the company name */
+    font-size: 24px; /* Set the font size of the company name */
+    margin-bottom: 0; /* Remove default margin below the company name */
+  }
+  

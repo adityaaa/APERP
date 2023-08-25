@@ -1,0 +1,12 @@
+<!-- billing_app/templates/bill_detail.html -->
+
+{% extends 'base.html' %}
+
+{% block title %}Bill Detail{% endblock %}
+
+{% block content %}
+    <h2>Bill Detail</h2>
+    <p>Bill ID: {{ bill.id }}</p>
+    <p>Customer Name: {{ bill.customer.name }}</p>
+    <!-- Add other bill details as needed -->
+{% endblock %}

@@ -1,0 +1,19 @@
+/* billing_app/static/styles.css */
+
+/* Header styling */
+  
+  /* Logo styling */
+  .header img {
+    float: left;
+    width: 100px;
+    height: 100px;
+    background: #555;
+  }
+  
+  /* Company name styling */
+  header h1 {
+    color: white; /* Set the color of the company name */
+    font-size: 24px; /* Set the font size of the company name */
+    margin-bottom: 0; /* Remove default margin below the company name */
+  }
+  

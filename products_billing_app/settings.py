@@ -3,7 +3,6 @@ import os
 from pathlib import Path
 import dj_database_url
 
-
 # Base directory of your Django project
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -11,9 +10,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-w213ab4k)1f71iiyb+h01ud*4twh+vi0v$9kx(xav@cs0793f-'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = ['https://aperp-8ca6bf9ae3f3.herokuapp.com/']
 
 # Application definition
 
@@ -61,15 +60,23 @@ WSGI_APPLICATION = 'products_billing_app.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
-# Database
+# Local Database
 # DATABASES = {
 #     'default': {
-#         'ENGINE': 'django.db.backends.sqlite3',
-#         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),  # Corrected database path
+#         'ENGINE': 'django.db.backends.postgresql',
+#         'NAME': 'APERP',
+#         'USER': 'adityarajak',  # Replace with your PostgreSQL username
+#         'PASSWORD': '123456',  # Replace with your PostgreSQL password
+#         'HOST': 'localhost',
+#         'PORT': '5432',
 #     }
 # }
-LOCAL_DATABASE_URL = 'sqlite:///db.sqlite3'
-DATABASES = {'default': dj_database_url.config(default=os.environ.get('DATABASE_URL', LOCAL_DATABASE_URL))}
+
+# Heroku Database
+DATABASES = {
+    'default': dj_database_url.config(default=os.environ['DATABASE_URL'])
+}
+
 
 # Password validation
 # https://docs.djangoproject.com/en/3.2/ref/settings/#auth-password-validators

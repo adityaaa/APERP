@@ -67,7 +67,7 @@ WSGI_APPLICATION = 'products_billing_app.wsgi.application'
 #         'NAME': 'APERP',
 #         'USER': 'adityarajak',  # Replace with your PostgreSQL username
 #         'PASSWORD': '123456',  # Replace with your PostgreSQL password
-#         'HOST': 'localhost',
+#         'HOST': '127.0.0.1',
 #         'PORT': '5432',
 #     }
 # }
